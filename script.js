@@ -1,5 +1,5 @@
 var textCols = $(".col-10");
-var saved = localStorage.getItem('textCols');
+var submissionSpan = document.querySelector(".description");
 
 //grabs current hour
 moment().hours()
@@ -24,13 +24,8 @@ for (let i = 0; i < textCols.length; i++) {
     }
 }
 
-$(".savebtn").on("click", function(){
-    localStorage.setItem('textCols', textCols.innerHTML);
-})
+localStorage.setItem("textCols", JSON.stringify(textCols));
 
-// var saved = localStorage.getItem('textCols');
-
-if (saved) {
-    textCols.innerHTML = saved;
-}
+var recentSubmission = JSON.parse(localStorage.getItem("textCols"));
+submissionSpan.textContent = recentSubmission.textCols;
 
