@@ -1,6 +1,6 @@
 var textCols = $(".col-10");
 var submissionSpan = document.querySelector(".description");
-var submitBtn = document.querySelector(".saveBtn");
+var submitBtn = document.getElementsByClassName(".saveBtn");
 
 //grabs current hour
 moment().hours()
