@@ -1,5 +1,6 @@
 var textCols = $(".col-10");
 var submissionSpan = document.querySelector(".description");
+var submitBtn = document.querySelector(".saveBtn");
 
 //grabs current hour
 moment().hours()
@@ -24,8 +25,15 @@ for (let i = 0; i < textCols.length; i++) {
     }
 }
 
-localStorage.setItem("textCols", JSON.stringify(textCols));
+submitBtn.addEventListener("click", function(event){
 
-var recentSubmission = JSON.parse(localStorage.getItem("textCols"));
-submissionSpan.textContent = recentSubmission.textCols;
+    
+    localStorage.setItem("textarea", JSON.stringify(textarea));
+})
+
+function render(){
+
+    var recentSubmission = JSON.parse(localStorage.getItem("textarea"));
+    submissionSpan.textContent = recentSubmission
+}
 
